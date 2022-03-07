@@ -22,10 +22,10 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
 # Modify the version number版本号里显示一个自己的名字（AutoBuild $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
-sed -i 's/OpenWrt /S.Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/OpenWrt /Sge.Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g' package/lean/default-settings/files/zzz-default-settings
 
 # 修改主机名字，把Xiaomi-R4A修改你喜欢的就行（不能纯数字或者使用中文）
-#sed -i '/uci commit system/i\uci set system.@system[0].hostname='HiWifi HC5962'' package/lean/default-settings/files/zzz-default-settings
+sed -i '/uci commit system/i\uci set system.@system[0].hostname='HiWifi HC5962'' package/lean/default-settings/files/zzz-default-settings
 
 # 修改 argon 为默认主题,可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
