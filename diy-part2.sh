@@ -54,10 +54,11 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #    echo 'CONFIG_KERNEL_BUILD_DOMAIN="GitHub Actions"' >>.config ||
 #    sed -i 's@\(CONFIG_KERNEL_BUILD_DOMAIN=\).*@\1$"GitHub Actions"@' .config
 #================================================================================================
-#移除不用软件包    
-rm -rf feeds/luci/applications/luci-app-dockerman
-rm -rf feeds/luci/applications/luci-app-wrtbwmon
-rm -rf feeds/packages/net/smartdns
+#移除不用软件包 0307暂不移除   
+#rm -rf feeds/luci/applications/luci-app-dockerman
+#rm -rf feeds/luci/applications/luci-app-wrtbwmon
+#rm -rf feeds/packages/net/smartdns
+
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
@@ -116,12 +117,13 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost p
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
-svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon
-cd luci-app-wrtbwmon
-git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2
-cp -r luci-app-wrtbwmon ../package/
-cd ..
+#对应上边,此处注释掉
+#svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
+#git clone https://github.com/brvphoenix/luci-app-wrtbwmon
+#cd luci-app-wrtbwmon
+#git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2
+#cp -r luci-app-wrtbwmon ../package/
+#cd ..
 # themes
 git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly package/luci-theme-Butterfly
 git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly-dark package/luci-theme-Butterfly-dark
@@ -153,14 +155,14 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subcon
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/toml11 package/toml11
 #添加smartdns
 #svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns package/smartdns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns
 #svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns package/luci-app-smartdns
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns package/luci-app-smartdns
 
 #git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
-svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
-svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
+#svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
+#svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
 #添加ksmbd
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
 #添加udp2raw
